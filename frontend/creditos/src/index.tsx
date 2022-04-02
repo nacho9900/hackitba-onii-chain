@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Expenses from './routes/expenses';
 import Invoices from './routes/invoices';
+import Search from './routes/Search/Search';
 
 
 ReactDOM.render(
@@ -13,7 +13,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="expenses" element={<Expenses />} />
+        <Route path="search" element={<Search />} />
         <Route path="invoices" element={<Invoices />} />
       </Routes>
     </BrowserRouter>,
