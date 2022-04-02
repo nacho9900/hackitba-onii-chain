@@ -45,7 +45,7 @@ const filters: Filter[] = [
 
 const FilterList = () => {
   return (
-    <div>
+    <div style={{color: 'white'}}>
       <h1>Filtros</h1>
       <ListGroup className="container main-content" >
         {filters.map((filter: Filter) => {

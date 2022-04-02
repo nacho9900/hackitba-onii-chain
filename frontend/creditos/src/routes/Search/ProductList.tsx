@@ -12,7 +12,7 @@ const items: Project[] = [
       earning: 0,
       category: 'technology',
       type: ProjectType.Service,
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU"
+      imageUrl: "https://pbs.twimg.com/profile_images/1128894758003232768/c4aW179f_400x400.png"
     },
     {
       name: 'Hablalo2',
@@ -45,7 +45,7 @@ const items: Project[] = [
         earning: 0,
         category: 'technology',
         type: ProjectType.Service,
-        imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU"
+        imageUrl: "https://pbs.twimg.com/profile_images/1128894758003232768/c4aW179f_400x400.png"
       },
       {
         name: 'Hablalo2',

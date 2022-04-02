@@ -3,8 +3,8 @@ import { FilterValue } from "src/types";
 
 const FilterValueRow = ( value:  FilterValue ) => {
   return (
-    <div >
-      <input type="checkbox" style={{marginRight: '2px'}}/>
+    <div style={{color: 'white'}}>
+      <input type="checkbox" style={{marginRight: '4px'}}/>
        <span>{value.name}</span>
     </div>
   );

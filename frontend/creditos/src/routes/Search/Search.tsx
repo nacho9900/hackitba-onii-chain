@@ -7,7 +7,7 @@ import "./Search.scss";
 export default function Search() {
   return (
     <div className="container" >
-      <header className="header">
+      <header className="header" style={{color: 'white'}}>
         <h1>Proyectos</h1>
       </header>
       <Container>
