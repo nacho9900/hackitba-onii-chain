@@ -1,5 +1,6 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./App.scss";
 import logo from "./logo.svg";
 
@@ -12,6 +13,8 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/expenses">Expenses</Link>
         <Alert variant="success">
           <Alert.Heading>Hey, nice to see you</Alert.Heading>
           <p>
