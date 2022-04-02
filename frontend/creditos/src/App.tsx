@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import { CreditProfile } from "./routes/credit-profile/CreditProfile";
+import { CreditProfile } from "./routes/CreditProfile/CreditProfile";
 import "./main.scss";
 import Login from "./routes/Login/Login";
 import Search from "./routes/Search/Search";
