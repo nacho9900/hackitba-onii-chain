@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Invoices from './routes/invoices';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Search from './routes/Search/Search';
-
+import Invoices from "./routes/invoices";
+import { CreditProfile } from "./routes/credit-profile/CreditProfile";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,10 +15,12 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="search" element={<Search />} />
         <Route path="invoices" element={<Invoices />} />
+        <Route path="profile" element={<CreditProfile />} />
       </Routes>
-    </BrowserRouter>,
+    </BrowserRouter>
+    ,
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
