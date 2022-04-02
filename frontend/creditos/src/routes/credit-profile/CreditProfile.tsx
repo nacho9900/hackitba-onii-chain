@@ -21,6 +21,7 @@ const PROJECT_1: Project = {
   invested: 100000,
   earning: 2540000,
   type: ProjectType.Service,
+  imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU"
 };
 
 const PROJECT_2: Project = {
@@ -33,6 +34,7 @@ const PROJECT_2: Project = {
   earning: 500000,
   type: ProjectType.Service,
   quantity: 500,
+  imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU"
 };
 
 const PROJECTS = [PROJECT_1, PROJECT_2];

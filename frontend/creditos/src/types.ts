@@ -13,6 +13,7 @@ export enum ProjectType {
 }
 
 export type Project = {
+  imageUrl: string;
   name: string;
   description: string;
   createdOn: Date;
@@ -23,3 +24,14 @@ export type Project = {
   type: ProjectType;
   quantity?: number;
 };
+
+export type Filter = {
+  name: string;
+  values: FilterValue[];
+};
+
+export type FilterValue = {
+  name: string;
+  checked: boolean;
+};
+
