@@ -1,36 +1,37 @@
-import React from "react";
-import { Alert } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { FC } from "react";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import logo from "./logo.svg";
+import Expenses from "./routes/expenses";
+import Invoices from "./routes/invoices";
+import { CreditProfile } from "./routes/credit-profile/CreditProfile";
+import "./main.scss";
 
-
-function App() {
+export const App = ({}) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
-        <Alert variant="success">
-          <Alert.Heading>Hey, nice to see you</Alert.Heading>
-          <p>
-            Aww yeah, you successfully read this important alert message. This example
-            text is going to run a bit longer so that you can see how spacing within an
-            alert works with this kind of content.
-          </p>
-          <hr />
-          <p className="mb-0">
-            Whenever you need to, be sure to use margin utilities to keep things nice
-            and tidy.
-          </p>
-        </Alert>
-      </header>
-    </div>
+    <React.StrictMode>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="profile">Perfil de Inversor</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <Container className="main-container">
+        <Row>
+          <Col xs={12}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="expenses" element={<Expenses />} />
+                <Route path="invoices" element={<Invoices />} />
+                <Route path="profile" element={<CreditProfile />} />
+              </Routes>
+            </BrowserRouter>
+          </Col>
+        </Row>
+      </Container>
+    </React.StrictMode>
   );
-}
-
-export default App;
+};
