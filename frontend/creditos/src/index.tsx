@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Expenses from './routes/expenses';
-import Invoices from './routes/invoices';
+import Login from './routes/Login/Login';
 
 
 ReactDOM.render(
@@ -14,7 +14,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="expenses" element={<Expenses />} />
-        <Route path="invoices" element={<Invoices />} />
+        <Route path="login" element={<Login />} />
       </Routes>
     </BrowserRouter>,
   </React.StrictMode>,

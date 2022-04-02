@@ -13,7 +13,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/login">login</Link> |{" "}
         <Link to="/expenses">Expenses</Link>
         <Alert variant="success">
           <Alert.Heading>Hey, nice to see you</Alert.Heading>
