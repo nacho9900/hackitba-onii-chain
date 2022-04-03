@@ -1,11 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Wallet } from "./Wallet";
-import { Profile, Project, ProjectType } from "../../types";
+import { InvestedCategory, Profile, Project, ProjectType } from "../../types";
 import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
 import { useState } from "react";
 import { ProjectsTable } from "../../componets/ProjectTable/ProjectsTable";
 
 import "./InvestorProfile.scss";
+import { InvestedCategoriesTable } from "../../componets/CategoryTable/InvestedCategoriesTable";
 
 const PROFILE: Profile = {
   name: "Leonel Messi",
@@ -47,6 +48,33 @@ const PROJECT_2: Project = {
 
 const projects = [PROJECT_1, PROJECT_2];
 
+const INVESTED_CATEGORY_1: InvestedCategory = {
+  name: "Deportes",
+  investedOn: new Date("2022-01-01"),
+  invested: 25000,
+  earnings: 40000,
+};
+
+const INVESTED_CATEGORY_2: InvestedCategory = {
+  name: "Turismo",
+  investedOn: new Date("2021-06-10"),
+  invested: 100000,
+  earnings: 11000,
+};
+
+const INVESTED_CATEGORY_3: InvestedCategory = {
+  name: "Tecnologia",
+  investedOn: new Date("2021-11-30"),
+  invested: 10000,
+  earnings: 100000,
+};
+
+const INVESTED_CATEGORIES: InvestedCategory[] = [
+  INVESTED_CATEGORY_1,
+  INVESTED_CATEGORY_2,
+  INVESTED_CATEGORY_3,
+];
+
 export const InvestorProfile = () => {
   const [profile, setProfile] = useState<Profile>(PROFILE);
 
@@ -72,6 +100,14 @@ export const InvestorProfile = () => {
         </Col>
         <Col xs={12}>
           <ProjectsTable projects={projects} />
+        </Col>
+      </Row>
+      <Row className="project-table-container mt-4">
+        <Col xs={12}>
+          <h1>Categorias Invertidas</h1>
+        </Col>
+        <Col xs={12}>
+          <InvestedCategoriesTable investedCategories={INVESTED_CATEGORIES} />
         </Col>
       </Row>
     </Container>
