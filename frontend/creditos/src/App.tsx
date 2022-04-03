@@ -4,14 +4,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import "./main.scss";
 import { CreditProfile } from "./routes/CreditProfile/CreditProfile";
-import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
 import Login from "./routes/Login/Login";
-import ProjectView from "./routes/Project/ProjectView";
 import Search from "./routes/Search/Search";
 import CryptoTransfer from "./routes/CryptoTransfer/CryptoTransfer";
 import ProjectView from "./routes/Project/ProjectView";
 import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
-import { MetaMaskProvider } from "metamask-react";
 
 export const App = ({}) => {
   return (
