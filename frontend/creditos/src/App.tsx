@@ -33,6 +33,7 @@ export const App = ({}) => {
                 <Route path="profile" element={<CreditProfile />} />
                 <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search />} />
+                <Route path="project" element={<ProjectView />} />
               </Routes>
             </BrowserRouter>
           </Col>
