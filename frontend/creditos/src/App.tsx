@@ -6,6 +6,7 @@ import { CreditProfile } from "./routes/credit-profile/CreditProfile";
 import "./main.scss";
 import Login from "./routes/Login/Login";
 import Search from "./routes/Search/Search";
+import ProjectView from "./routes/Project/ProjectView";
 
 export const App = ({}) => {
   return (
@@ -29,6 +30,7 @@ export const App = ({}) => {
                 <Route path="profile" element={<CreditProfile />} />
                 <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search />} />
+                <Route path="/proyect" element={<ProjectView />} />
               </Routes>
             </BrowserRouter>
           </Col>

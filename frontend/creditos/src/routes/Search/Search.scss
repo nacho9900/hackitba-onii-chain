@@ -12,12 +12,23 @@ header {
     padding: 1rem 0;
     margin: 1rem 0;
   }
+
+  .product:hover {
+    cursor: pointer;
+  }
+
+  .product:focus{
+    box-shadow: 
+    inset -3.5em 0 0 0 var(--hover),
+    inset 3.5em 0 0 0 var(--hover);    }
   
   .product-detail {
     padding: 0 2rem;
   }
   
   .product-price {
+    text-align: center;
+    margin-top: 25px;
     font-weight: bold;
     font-size: 140%;
   }

@@ -13,6 +13,7 @@ export enum ProjectType {
 }
 
 export type Project = {
+  id: number;
   imageUrl: string;
   name: string;
   description: string;

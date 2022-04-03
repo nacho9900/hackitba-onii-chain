@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import FilterList from "./FilterList";
-import ProductList from "./ProductList";
+import ProjectList from "./ProjectList";
 import "./Search.scss";
 
 
@@ -16,7 +16,7 @@ export default function Search() {
             <FilterList />
           </Col>
           <Col> 
-            <ProductList /> 
+            <ProjectList /> 
           </Col>
         </Row>
       </Container>
