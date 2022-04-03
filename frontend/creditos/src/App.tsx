@@ -9,6 +9,7 @@ import Search from "./routes/Search/Search";
 import CryptoTransfer from "./routes/CryptoTransfer/CryptoTransfer";
 import ProjectView from "./routes/Project/ProjectView";
 import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
+import { MetaMaskProvider } from "metamask-react";
 
 export const App = ({}) => {
   return (
@@ -33,6 +34,7 @@ export const App = ({}) => {
                 <Route path="profile" element={<CreditProfile />} />
                 <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search />} />
+                <Route path="cryptotransfer" element={<CryptoTransfer />} />
               </Routes>
             </BrowserRouter>
           </Col>
