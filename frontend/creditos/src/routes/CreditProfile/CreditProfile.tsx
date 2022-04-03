@@ -1,7 +1,8 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useState } from "react";
 import { Profile, Project, ProjectType } from "../../types";
-import { Col, Container, ProgressBar, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import "./CreditProfile.scss";
+import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
 
 const PROFILE: Profile = {
   name: "Leonel Messi",
@@ -44,32 +45,18 @@ const PROJECTS = [PROJECT_1, PROJECT_2];
 export const CreditProfile: FC<{}> = () => {
   const [profile, setProfile] = useState<Profile>(PROFILE);
   const [projects, setProjects] = useState<Project[]>(PROJECTS);
-  const progress = useMemo(() => 10 * profile.scoring, [profile.scoring]);
 
   return (
     <>
       <Container className="profile-container" fluid>
         <Row>
           <Col xs={12} className="d-flex justify-content-center pt-2">
-            <img
-              src={profile.imageUrl}
-              className="image_container"
-              alt="Profile Image"
+            <ProfileComponent
+              name={profile.name}
+              bio={profile.bio}
+              scoring={profile.scoring}
+              imageUrl={profile.imageUrl}
             />
-          </Col>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
-            <h1>{profile.name}</h1>
-          </Col>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
-            <p>{profile.bio}</p>
-          </Col>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
-            <p>Puntaje Crediticio: {profile.scoring}</p>
-          </Col>
-        </Row>
-        <Row className="d-flex justify-content-center">
-          <Col xs={4}>
-            <ProgressBar variant="success" now={progress} />
           </Col>
         </Row>
         <Row>
