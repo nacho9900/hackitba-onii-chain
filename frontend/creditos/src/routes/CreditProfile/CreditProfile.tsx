@@ -3,6 +3,7 @@ import { Profile, Project, ProjectType } from "../../types";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import "./CreditProfile.scss";
 import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
+import { ProjectsTable } from "../../componets/ProjectTable/ProjectsTable";
 
 const PROFILE: Profile = {
   name: "Leonel Messi",
@@ -50,9 +51,9 @@ export const CreditProfile: FC<{}> = () => {
 
   return (
     <>
-      <Container className="profile-container" fluid>
-        <Row>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
+      <Container fluid>
+        <Row className="d-flex justify-content-center pt-2">
+          <Col xs={8}>
             <ProfileComponent
               name={profile.name}
               bio={profile.bio}
@@ -61,35 +62,12 @@ export const CreditProfile: FC<{}> = () => {
             />
           </Col>
         </Row>
-        <Row>
+        <Row className="projects-container">
           <Col xs={12} className="px-5">
-            <h1>Proyectos</h1>
+            <h1>Mis Proyectos</h1>
           </Col>
           <Col xs={12} className="px-5">
-            <Table striped bordered>
-              <thead>
-                <th>Nombre</th>
-                <th>Creado En</th>
-                <th>Comenzo En</th>
-                <th># Productos</th>
-                <th>Inversion</th>
-                <th>Ganancia</th>
-              </thead>
-              <tbody>
-                {projects.map((project) => (
-                  <tr>
-                    <td>{project.name}</td>
-                    <td>{project.createdOn.toISOString()}</td>
-                    <td>{project.startOn.toISOString()}</td>
-                    <td>
-                      {project.quantity !== undefined ? project.quantity : "-"}
-                    </td>
-                    <td className="text-end">${project.invested}</td>
-                    <td className="text-end">${project.earning}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+            <ProjectsTable projects={projects} />
           </Col>
         </Row>
       </Container>
