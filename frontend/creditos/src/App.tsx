@@ -9,6 +9,7 @@ import Search from "./routes/Search/Search";
 import CryptoTransfer from "./routes/CryptoTransfer/CryptoTransfer";
 import ProjectView from "./routes/Project/ProjectView";
 import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
+import { InvestOnCategories } from "./routes/InvestOnCategories/InvestOnCategories";
 
 export const App = ({}) => {
   return (
@@ -21,6 +22,7 @@ export const App = ({}) => {
             <Nav.Link href="login">Ingresar</Nav.Link>
             <Nav.Link href="search">Buscar Inversiones</Nav.Link>
             <Nav.Link href="investor">Perfil de Inversor</Nav.Link>
+            <Nav.Link href="categories">Invertir en Categorias</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -36,6 +38,7 @@ export const App = ({}) => {
                 <Route path="cryptotransfer" element={<CryptoTransfer />} />
                 <Route path="project" element={<ProjectView />} />
                 <Route path="investor" element={<InvestorProfile />} />
+                <Route path="categories" element={<InvestOnCategories />} />
               </Routes>
             </BrowserRouter>
           </Col>

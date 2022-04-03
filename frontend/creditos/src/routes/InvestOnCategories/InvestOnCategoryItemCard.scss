@@ -1,0 +1,17 @@
+.item-card {
+  transition: 300ms all;
+  cursor: pointer;
+}
+
+.item-image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.item-profit {
+  color: green;
+}
+
+.item-card:hover {
+  box-shadow: rgba(255, 255, 255, 0.7) 0 7px 29px 0;
+}
