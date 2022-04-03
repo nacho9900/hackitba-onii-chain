@@ -30,7 +30,8 @@ const ProjectView = () => {
           <div className="box">
             <div className="row">
               <h2>{project.name}</h2>
-              <span>${project.earning}</span>
+              <span>Ganancias ${project.earning}</span>
+              <span>Inversión ${project.invested}</span>
             </div>
 
             <p>{project.description}</p>
