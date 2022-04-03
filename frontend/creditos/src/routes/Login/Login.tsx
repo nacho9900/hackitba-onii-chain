@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import "./Login.scss";
 
 export default function Login() {
@@ -16,9 +17,12 @@ export default function Login() {
     });
   };
 
+  let navigate = useNavigate();
+
   const sendData = (event: any) => {
     event.preventDefault();
     console.log("enviando datos..." + logData.user + " " + logData.password);
+    navigate("/investor/", { replace: true });
   };
 
   return (

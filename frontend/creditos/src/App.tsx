@@ -21,7 +21,6 @@ export const App = ({}) => {
             <img src={Logo} height="50" alt="logo" />
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/login">Ingresar</Nav.Link>
             <Nav.Link href="/investor">Mi Perfil</Nav.Link>
             <Nav.Link href="/search">Buscar Proyectos</Nav.Link>
             <Nav.Link href="/categories">Invertir en Categorias</Nav.Link>
@@ -33,9 +32,8 @@ export const App = ({}) => {
           <Col xs={12}>
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<App />} />
+                <Route path="/" element={<Login />} />
                 <Route path="profile/:profileId" element={<CreditProfile />} />
-                <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search />} />
                 <Route path="cryptotransfer" element={<CryptoTransfer />} />
                 <Route path="project/:projectId" element={<ProjectView />} />
