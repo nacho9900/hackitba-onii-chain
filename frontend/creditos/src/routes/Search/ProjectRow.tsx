@@ -8,7 +8,7 @@ const ProjectRow = (project: Project) => {
   let navigate = useNavigate();
 
   const goToProyectPage = (projectId: number) => {
-    navigate("/project/" + projectId, { replace: true });
+    navigate("/project/" + projectId, { replace: false });
   }
 
   return (

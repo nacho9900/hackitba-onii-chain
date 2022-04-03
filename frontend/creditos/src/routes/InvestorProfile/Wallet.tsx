@@ -19,6 +19,10 @@ export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
 
   const navigate = useNavigate();
 
+  const extractCrypto = () => {
+    navigate("/cryptotransfer", {replace: false});
+  }
+
   return (
     <Container fluid>
       <Row>
@@ -35,7 +39,7 @@ export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
             currencyIcon={UbiIcon}
             currencyName="UBI"
             amount={ubi}
-            extractFn = {() => navigate("/cryptotransfer", {replace: true})}
+            extractFn = {extractCrypto}
           />
         </Col>
         <Col xs={4}>
@@ -43,7 +47,7 @@ export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
             currencyIcon={UsdcIcon}
             currencyName="USDC"
             amount={usdc}
-            extractFn = {() => navigate("/cryptotransfer", {replace: true})}
+            extractFn = {extractCrypto}
           />
         </Col>
       </Row>

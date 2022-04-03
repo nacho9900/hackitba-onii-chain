@@ -21,7 +21,7 @@ export const Profile: FC<ProfileProps> = ({ imageUrl, name, bio, scoring, clicka
 
   const goToProfile = () => {
     if (clickable){
-      navigate("/profile/"+profileId, { replace: true });
+      navigate("/profile/"+profileId, { replace: false });
     }
   }
 

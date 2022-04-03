@@ -11,11 +11,11 @@ const filters: Filter[] = [
         checked: false
       }, 
       {
-        name: 'Calzado',
+        name: 'Moda',
         checked: false
       }, 
       {
-        name: 'Servicios',
+        name: 'Arte y Multimedia',
         checked: false
       }, 
       {

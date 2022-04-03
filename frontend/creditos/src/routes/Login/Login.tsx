@@ -22,7 +22,7 @@ export default function Login() {
   const sendData = (event: any) => {
     event.preventDefault();
     console.log("enviando datos..." + logData.user + " " + logData.password);
-    navigate("/investor/", { replace: true });
+    navigate("/investor/", { replace: false });
   };
 
   return (
