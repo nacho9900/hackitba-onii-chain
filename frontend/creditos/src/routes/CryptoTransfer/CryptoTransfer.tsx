@@ -1,10 +1,10 @@
 import "./CryptoTransfer.scss";
 import logo from "./img/logo.svg";
-import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { useMetaMask } from "metamask-react";
 
 export default function CryptoTransfer() {
-  const { status, connect, account, chainId, ethereum } = useMetaMask();
+  const { status, connect } = useMetaMask();
 
   const getMetamaskMsg = (status: string) => {
     switch (status) {
