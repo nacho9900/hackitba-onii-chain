@@ -71,3 +71,11 @@ Nuestro proyecto permite el desarrollo e integracion de varios mercados como por
 Commit: `29942ee69c23ddee1a219e08d4986a9651c236ee`
 
 Brach: `main`
+
+## Integrantes:
+
+- Francisco Daniel Ledesma
+- Nicolás Marcantonio
+- Ignacio Nicolás Negro Caino
+
+# Grupo: OniiChain 
