@@ -36,3 +36,9 @@ export type FilterValue = {
   checked: boolean;
 };
 
+export type InvestedCategory = {
+  name: string;
+  investedOn: Date;
+  invested: number;
+  earnings: number;
+};

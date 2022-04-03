@@ -1,10 +1,12 @@
-import React, { FC } from "react";
+import React from "react";
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import { CreditProfile } from "./routes/CreditProfile/CreditProfile";
 import "./main.scss";
+import { CreditProfile } from "./routes/CreditProfile/CreditProfile";
+import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
 import Login from "./routes/Login/Login";
+import ProjectView from "./routes/Project/ProjectView";
 import Search from "./routes/Search/Search";
 import CryptoTransfer from "./routes/CryptoTransfer/CryptoTransfer";
 import ProjectView from "./routes/Project/ProjectView";
@@ -35,6 +37,8 @@ export const App = ({}) => {
                 <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search />} />
                 <Route path="cryptotransfer" element={<CryptoTransfer />} />
+                <Route path="project" element={<ProjectView />} />
+                <Route path="investor" element={<InvestorProfile />} />
               </Routes>
             </BrowserRouter>
           </Col>
