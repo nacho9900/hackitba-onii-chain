@@ -44,3 +44,9 @@ export type InvestedCategory = {
   invested: number;
   earnings: number;
 };
+
+export type InvestOnCategoryItem = {
+  name: string;
+  imageUrl: string;
+  profit: number;
+};
