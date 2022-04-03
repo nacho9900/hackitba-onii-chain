@@ -8,13 +8,13 @@ const ProjectRow = (project: Project) => {
   let navigate = useNavigate();
 
   const goToProyectPage = (projectId: number) => {
-    navigate("/project", { replace: true });
+    navigate("/project/"+projectId, { replace: true });
   }
 
   return (
     <div className="row product" style={{ backgroundColor: 'white' }} onClick={(event) => { goToProyectPage(project.id) }}>
       <div className="col-md-2">
-        <img src={project.imageUrl} alt="Sample Image" height="150" />
+        <img src={project.imageUrl} alt="Sample Image" height="150" width="180" />
       </div>
       <div className="col-md-4 product-detail">
         <h4>{project.name}</h4>

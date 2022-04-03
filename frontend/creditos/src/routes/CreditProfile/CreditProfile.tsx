@@ -1,53 +1,20 @@
 import { FC, useState } from "react";
-import { Profile, Project, ProjectType } from "../../types";
-import { Col, Container, Row, Table } from "react-bootstrap";
-import "./CreditProfile.scss";
+import { Col, Container, Row } from "react-bootstrap";
+import { useParams } from "react-router";
+import { getProfileProjects, MOCKED_PROFILES, MOCKED_PROJECTS } from "src/mocks/mocks";
 import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
 import { ProjectsTable } from "../../componets/ProjectTable/ProjectsTable";
-
-const PROFILE: Profile = {
-  name: "Leonel Messi",
-  bio: "Jugador de futbol 🇦🇷 amateur en Colegiales. Papa de 3 hijos y un perro.",
-  imageUrl:
-    "https://img.a.transfermarkt.technology/portrait/big/28003-1631171950.jpg?lm=1",
-  scoring: 7,
-  location: "Paris, Francia 🇫🇷",
-};
-
-const PROJECT_1: Project = {
-  id: 0,
-  name: "Champions 2007 🏆",
-  createdOn: new Date("2007-11-02"),
-  startOn: new Date("2007-11-02"),
-  category: "Deportes",
-  description: "",
-  invested: 100000,
-  earning: 2540000,
-  type: ProjectType.Service,
-  imageUrl:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU",
-};
-
-const PROJECT_2: Project = {
-  id: 1,
-  name: "Lote de Pelotas Jabulani Mundial 2010 ⚽️",
-  createdOn: new Date("2010-05-02"),
-  startOn: new Date("2010-06-25"),
-  category: "Deportes",
-  description: "",
-  invested: 1000000,
-  earning: 500000,
-  type: ProjectType.Service,
-  quantity: 500,
-  imageUrl:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU",
-};
-
-const PROJECTS = [PROJECT_1, PROJECT_2];
+import { Profile, Project } from "../../types";
+import "./CreditProfile.scss";
 
 export const CreditProfile: FC<{}> = () => {
-  const [profile, setProfile] = useState<Profile>(PROFILE);
-  const [projects, setProjects] = useState<Project[]>(PROJECTS);
+
+  let { profileId } = useParams();
+
+  profileId = profileId ? profileId : "1";
+
+  const [profile, setProfile] = useState<Profile>(MOCKED_PROFILES[profileId]);
+  const [projects, setProjects] = useState<Project[]>(Object.values(getProfileProjects(parseInt(profileId))));
 
   return (
     <>
@@ -59,6 +26,7 @@ export const CreditProfile: FC<{}> = () => {
               bio={profile.bio}
               scoring={profile.scoring}
               imageUrl={profile.imageUrl}
+              profileId={profile.id}
             />
           </Col>
         </Row>

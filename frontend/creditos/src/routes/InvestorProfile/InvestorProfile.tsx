@@ -9,6 +9,7 @@ import "./InvestorProfile.scss";
 import { InvestedCategoriesTable } from "../../componets/CategoryTable/InvestedCategoriesTable";
 
 const PROFILE: Profile = {
+  id: 1,
   name: "Leonel Messi",
   bio: "Jugador de futbol 🇦🇷 amateur en Colegiales. Papa de 3 hijos y un perro.",
   imageUrl:
@@ -19,6 +20,7 @@ const PROFILE: Profile = {
 
 const PROJECT_1: Project = {
   id: 0,
+  profileId: 1,
   name: "Champions 2007 🏆",
   createdOn: new Date("2007-11-02"),
   startOn: new Date("2007-11-02"),
@@ -33,6 +35,7 @@ const PROJECT_1: Project = {
 
 const PROJECT_2: Project = {
   id: 1,
+  profileId: 1,
   name: "Lote de Pelotas Jabulani Mundial 2010 ⚽️",
   createdOn: new Date("2010-05-02"),
   startOn: new Date("2010-06-25"),
@@ -86,6 +89,7 @@ export const InvestorProfile = () => {
             name={profile.name}
             bio={profile.bio}
             imageUrl={profile.imageUrl}
+            profileId={profile.id}
           />
         </Col>
       </Row>

@@ -1,4 +1,5 @@
 export type Profile = {
+  id: number
   imageUrl: string;
   name: string;
   bio: string;
@@ -14,6 +15,7 @@ export enum ProjectType {
 
 export type Project = {
   id: number;
+  profileId: number;
   imageUrl: string;
   name: string;
   description: string;

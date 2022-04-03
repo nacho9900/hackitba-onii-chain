@@ -9,9 +9,10 @@ export type ProfileProps = {
   bio: string;
   scoring?: number;
   clickable?: boolean;
+  profileId: number;
 };
 
-export const Profile: FC<ProfileProps> = ({ imageUrl, name, bio, scoring, clickable }) => {
+export const Profile: FC<ProfileProps> = ({ imageUrl, name, bio, scoring, clickable, profileId }) => {
   const progress = useMemo(() => (scoring ? 10 * scoring : 0), [scoring]);
 
   const containerClass = "profile-container mb-4" + (clickable === true ? ' clickable' : '');
@@ -20,7 +21,7 @@ export const Profile: FC<ProfileProps> = ({ imageUrl, name, bio, scoring, clicka
 
   const goToProfile = () => {
     if (clickable){
-      navigate("/profile", { replace: true });
+      navigate("/profile/"+profileId, { replace: true });
     }
   }
 
