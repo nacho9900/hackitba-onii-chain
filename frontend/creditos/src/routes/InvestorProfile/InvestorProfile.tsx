@@ -5,6 +5,8 @@ import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
 import { useState } from "react";
 import { ProjectsTable } from "../../componets/ProjectTable/ProjectsTable";
 
+import "./InvestorProfile.scss";
+
 const PROFILE: Profile = {
   name: "Leonel Messi",
   bio: "Jugador de futbol 🇦🇷 amateur en Colegiales. Papa de 3 hijos y un perro.",
@@ -66,7 +68,7 @@ export const InvestorProfile = () => {
       </Row>
       <Row className="project-table-container mt-4">
         <Col xs={12}>
-          <h1>Proyectos en los que Inverti</h1>
+          <h1>Proyectos Invertidos</h1>
         </Col>
         <Col xs={12}>
           <ProjectsTable projects={projects} />

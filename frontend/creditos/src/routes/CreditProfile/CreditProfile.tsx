@@ -51,9 +51,9 @@ export const CreditProfile: FC<{}> = () => {
 
   return (
     <>
-      <Container className="profile-container" fluid>
-        <Row>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
+      <Container fluid>
+        <Row className="d-flex justify-content-center pt-2">
+          <Col xs={8}>
             <ProfileComponent
               name={profile.name}
               bio={profile.bio}
@@ -62,9 +62,9 @@ export const CreditProfile: FC<{}> = () => {
             />
           </Col>
         </Row>
-        <Row>
+        <Row className="projects-container">
           <Col xs={12} className="px-5">
-            <h1>Proyectos</h1>
+            <h1>Mis Proyectos</h1>
           </Col>
           <Col xs={12} className="px-5">
             <ProjectsTable projects={projects} />
