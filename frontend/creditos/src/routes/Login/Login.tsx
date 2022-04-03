@@ -28,23 +28,23 @@ export default function Login() {
     <div className="auth-wrapper">
       <div className="auth-inner">
         <form>
-          <h3>Sign In</h3>
+          <h3>Ingresar</h3>
           <div className="form-group">
-            <label>Email address</label>
+            <label>Dirección de email</label>
             <input
               type="email"
               className="form-control"
-              placeholder="Enter email"
+              placeholder="Email"
               onChange={handleInputChange}
               name="user"
             />
           </div>
           <div className="form-group">
-            <label>Password</label>
+            <label>Contraseña</label>
             <input
               type="password"
               className="form-control"
-              placeholder="Enter password"
+              placeholder="Contraseña"
               onChange={handleInputChange}
               name="password"
             />
@@ -57,7 +57,7 @@ export default function Login() {
                 id="customCheck1"
               />
               <label className="custom-control-label" htmlFor="customCheck1">
-                Remember me
+                Recordar usuario
               </label>
             </div>
           </div>
@@ -66,10 +66,10 @@ export default function Login() {
             className="btn btn-primary btn-block"
             onClick={sendData}
           >
-            Submit
+            Entrar
           </button>
           <p className="forgot-password text-right">
-            Forgot <a href="#">password?</a>
+          <a href="#">¿Olvido su contraseña?</a>
           </p>
         </form>
       </div>

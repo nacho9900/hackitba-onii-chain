@@ -6,6 +6,7 @@ import { CreditProfile } from "./routes/CreditProfile/CreditProfile";
 import "./main.scss";
 import Login from "./routes/Login/Login";
 import Search from "./routes/Search/Search";
+import CryptoTransfer from "./routes/CryptoTransfer/CryptoTransfer";
 import ProjectView from "./routes/Project/ProjectView";
 import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
 
@@ -32,8 +33,6 @@ export const App = ({}) => {
                 <Route path="profile" element={<CreditProfile />} />
                 <Route path="login" element={<Login />} />
                 <Route path="search" element={<Search />} />
-                <Route path="/proyect" element={<ProjectView />} />
-                <Route path="investor" element={<InvestorProfile />} />
               </Routes>
             </BrowserRouter>
           </Col>
