@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useNavigate } from "react-router";
 import { CurrencyCard } from "./CurrencyCard";
 
 import PesosIcon from "./img/pesos.png";
@@ -15,6 +16,9 @@ export type WalletProps = {
 };
 
 export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
+
+  const navigate = useNavigate();
+
   return (
     <Container fluid>
       <Row>
@@ -23,6 +27,7 @@ export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
             currencyIcon={PesosIcon}
             currencyName="ARS"
             amount={pesos}
+            extractFn = {() => console.log("TODO")}
           />
         </Col>
         <Col xs={4}>
@@ -30,6 +35,7 @@ export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
             currencyIcon={UbiIcon}
             currencyName="UBI"
             amount={ubi}
+            extractFn = {() => navigate("/cryptotransfer", {replace: true})}
           />
         </Col>
         <Col xs={4}>
@@ -37,6 +43,7 @@ export const Wallet: FC<WalletProps> = ({ pesos, ubi, usdc }) => {
             currencyIcon={UsdcIcon}
             currencyName="USDC"
             amount={usdc}
+            extractFn = {() => navigate("/cryptotransfer", {replace: true})}
           />
         </Col>
       </Row>

@@ -6,12 +6,14 @@ export type CurrencyCardProps = {
   currencyIcon: string;
   currencyName: string;
   amount: number;
+  extractFn: () => void;
 };
 
 export const CurrencyCard: FC<CurrencyCardProps> = ({
   currencyIcon,
   currencyName,
   amount,
+  extractFn
 }) => {
   return (
     <Container className="currency-card pt-2" fluid>
@@ -32,7 +34,7 @@ export const CurrencyCard: FC<CurrencyCardProps> = ({
             </Button>
           </Col>
           <Col xs={6}>
-            <Button variant="primary" className="w-100">
+            <Button onClick={() => extractFn()} variant="primary" className="w-100">
               Extraer
             </Button>
           </Col>
