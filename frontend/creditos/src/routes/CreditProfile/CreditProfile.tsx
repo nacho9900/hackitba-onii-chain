@@ -3,6 +3,7 @@ import { Profile, Project, ProjectType } from "../../types";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import "./CreditProfile.scss";
 import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
+import { ProjectsTable } from "../../componets/ProjectTable/ProjectsTable";
 
 const PROFILE: Profile = {
   name: "Leonel Messi",
@@ -66,30 +67,7 @@ export const CreditProfile: FC<{}> = () => {
             <h1>Proyectos</h1>
           </Col>
           <Col xs={12} className="px-5">
-            <Table striped bordered>
-              <thead>
-                <th>Nombre</th>
-                <th>Creado En</th>
-                <th>Comenzo En</th>
-                <th># Productos</th>
-                <th>Inversion</th>
-                <th>Ganancia</th>
-              </thead>
-              <tbody>
-                {projects.map((project) => (
-                  <tr>
-                    <td>{project.name}</td>
-                    <td>{project.createdOn.toISOString()}</td>
-                    <td>{project.startOn.toISOString()}</td>
-                    <td>
-                      {project.quantity !== undefined ? project.quantity : "-"}
-                    </td>
-                    <td className="text-end">${project.invested}</td>
-                    <td className="text-end">${project.earning}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+            <ProjectsTable projects={projects} />
           </Col>
         </Row>
       </Container>
