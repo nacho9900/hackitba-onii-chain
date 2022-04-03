@@ -1,5 +1,6 @@
 import { FC, useMemo } from "react";
 import { Col, Container, ProgressBar, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "./Profile.scss";
 
 export type ProfileProps = {
@@ -7,13 +8,24 @@ export type ProfileProps = {
   name: string;
   bio: string;
   scoring?: number;
+  clickable?: boolean;
 };
 
-export const Profile: FC<ProfileProps> = ({ imageUrl, name, bio, scoring }) => {
+export const Profile: FC<ProfileProps> = ({ imageUrl, name, bio, scoring, clickable }) => {
   const progress = useMemo(() => (scoring ? 10 * scoring : 0), [scoring]);
 
+  const containerClass = "profile-container mb-4" + (clickable === true ? ' clickable' : '');
+
+  let navigate = useNavigate();
+
+  const goToProfile = () => {
+    if (clickable){
+      navigate("/profile", { replace: true });
+    }
+  }
+
   return (
-    <Container className="profile-container mb-4" fluid>
+    <Container className={containerClass} fluid onClick={() => goToProfile()}>
       <Row>
         <Col xs={12} className="d-flex justify-content-center pt-2">
           <img src={imageUrl} className="image_container" alt="Profile Image" />
