@@ -10,13 +10,16 @@ import CryptoTransfer from "./routes/CryptoTransfer/CryptoTransfer";
 import ProjectView from "./routes/Project/ProjectView";
 import { InvestorProfile } from "./routes/InvestorProfile/InvestorProfile";
 import { InvestOnCategories } from "./routes/InvestOnCategories/InvestOnCategories";
+import Logo from "./img/logo.jpeg";
 
 export const App = ({}) => {
   return (
     <React.StrictMode>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Navbar</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img src={Logo} height="50" alt="logo" />
+          </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/login">Ingresar</Nav.Link>
             <Nav.Link href="/investor">Mi Perfil</Nav.Link>
