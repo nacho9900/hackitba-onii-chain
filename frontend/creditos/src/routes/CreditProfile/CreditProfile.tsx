@@ -1,7 +1,8 @@
-import { FC, useMemo, useState } from "react";
+import { FC, useState } from "react";
 import { Profile, Project, ProjectType } from "../../types";
-import { Col, Container, ProgressBar, Row, Table } from "react-bootstrap";
-import "./credit-profile.scss";
+import { Col, Container, Row, Table } from "react-bootstrap";
+import "./CreditProfile.scss";
+import { Profile as ProfileComponent } from "../../componets/Profile/Profile";
 
 const PROFILE: Profile = {
   name: "Leonel Messi",
@@ -22,7 +23,8 @@ const PROJECT_1: Project = {
   invested: 100000,
   earning: 2540000,
   type: ProjectType.Service,
-  imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU"
+  imageUrl:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU",
 };
 
 const PROJECT_2: Project = {
@@ -36,7 +38,8 @@ const PROJECT_2: Project = {
   earning: 500000,
   type: ProjectType.Service,
   quantity: 500,
-  imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU"
+  imageUrl:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEjIUv61WpvPinWqgTBzYokMrDQUOC80WWig&usqp=CAU",
 };
 
 const PROJECTS = [PROJECT_1, PROJECT_2];
@@ -44,32 +47,18 @@ const PROJECTS = [PROJECT_1, PROJECT_2];
 export const CreditProfile: FC<{}> = () => {
   const [profile, setProfile] = useState<Profile>(PROFILE);
   const [projects, setProjects] = useState<Project[]>(PROJECTS);
-  const progress = useMemo(() => 10 * profile.scoring, [profile.scoring]);
 
   return (
     <>
       <Container className="profile-container" fluid>
         <Row>
           <Col xs={12} className="d-flex justify-content-center pt-2">
-            <img
-              src={profile.imageUrl}
-              className="image_container"
-              alt="Profile Image"
+            <ProfileComponent
+              name={profile.name}
+              bio={profile.bio}
+              scoring={profile.scoring}
+              imageUrl={profile.imageUrl}
             />
-          </Col>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
-            <h1>{profile.name}</h1>
-          </Col>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
-            <p>{profile.bio}</p>
-          </Col>
-          <Col xs={12} className="d-flex justify-content-center pt-2">
-            <p>Puntaje Crediticio: {profile.scoring}</p>
-          </Col>
-        </Row>
-        <Row className="d-flex justify-content-center">
-          <Col xs={4}>
-            <ProgressBar variant="success" now={progress} />
           </Col>
         </Row>
         <Row>
